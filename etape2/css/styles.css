@@ -1,0 +1,135 @@
+body {
+  background-image: url("../image/bg7.png");
+  background-position: left top 50px;
+  background-size: contain;
+  background-color: rgb(104, 102, 102);
+  color: #ddf3f5;
+  height: 100%;
+  width: 100%;
+  font-family: "Kaushan Script", cursive;
+}
+.header {
+  justify-self: center;
+  width: 100%;
+  text-align: center;
+}
+h1 {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 2em;
+  margin-top: 0em;
+}
+h2 {
+  margin-left: 50px;
+}
+
+#content {
+  align-items: center;
+  background-color: rgba(104, 102, 102, 0.6);
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 150px;
+  justify-self: center;
+  width: 300px;
+  height: 300px;
+  align-items: start;
+  justify-items: center;
+}
+
+#quote-number,
+#quote-type {
+  font-family: "Big Shoulders Display", cursive;
+  margin-left: 5px;
+}
+
+.number-title,
+.type-title {
+  align-self: center;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Big Shoulders Display", cursive;
+}
+.type-title {
+  align-self: flex-start;
+}
+.citation {
+  width: 200px;
+  background-color: rgb(97, 93, 94);
+}
+
+#btn-generate {
+  font-size: 20px;
+  font-family: "Big Shoulders Display", cursive;
+  align-items: center;
+  background-color: #686666;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: flex;
+  height: 75px;
+  justify-content: center;
+  width: 75px;
+}
+
+#btn-generate:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+.footer {
+  font-family: "Big Shoulders Display", cursive;
+  align-self: center;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+/*! --------------------------------- */
+/*! Ecran supérieur à 500px */
+/* !--------------------------------- */
+@media only screen and (min-width: 500px) {
+  body {
+    background-size: cover;
+    background-position: left 100px;
+  }
+  h1 {
+    margin-top: 50px;
+    font-size: 3em;
+    margin-top: 0em;
+  }
+  h2 {
+    color: #ddf3f5;
+    margin-left: 50px;
+  }
+  .number-title,
+  .type-title {
+    align-self: flex-end;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+      -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    width: 200px;
+    border-radius: 50px;
+  }
+
+  .type-title {
+    align-self: center;
+  }
+
+  #content {
+   
+    background-color: rgba(104, 102, 102, 0.6);
+    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+      -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    border-radius: 200px;
+    justify-content: center;
+    margin-right: 4rem;
+    width: 400px;
+    height: 400px;
+    align-items: start;
+    justify-items: center;
+  }
+  .footer{
+    font-size: 1.5em;
+    text-align: right;
+  }
+}
