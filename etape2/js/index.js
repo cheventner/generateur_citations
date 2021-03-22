@@ -91,8 +91,7 @@ const swalFire = (html) => {
 function fillSelect(textsTab, $select) {
   for (let i = 0; i < textsTab.length; i++) {
     let $option = document.createElement("option");
-
-    $option.value = i;
+ $option.value = i;
     $option.text = textsTab[i];
     $select.append($option);
   }
@@ -115,8 +114,7 @@ function generateQuote(tabQuote, numberToDisplay) {
           quote.charAt(0, 1).toUpperCase() + quote.substring(1).toLowerCase();
       } else if (i === 1) {
         quote += " ";
-      }
-      else if (i === 2) {
+      } else if (i === 2) {
         quote += ".";
       }
       sentences.splice(randomIndex, 1);
@@ -134,10 +132,6 @@ btnGenerer.addEventListener(`click`, () => {
   const numberToDisplay = numberOfQuote.value;
   const typeOfDisplay = typeOfQuote.value;
   const tabtoDisplay = sentencesTab[typeOfDisplay];
-  // const ponctuation = tabtoDisplay;
-  if (tabtoDisplay) {
-    const quotesBlock = generateQuote(tabtoDisplay.sentences, numberToDisplay);
-
-    swalFire(quotesBlock);
-  }
+  const quotesBlock = generateQuote(tabtoDisplay.sentences, numberToDisplay);
+  swalFire(quotesBlock);
 });
