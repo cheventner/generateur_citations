@@ -3,7 +3,7 @@
 // A défaut d'être intelligible, la phrase doit être cohérente (pas de point d'exclamation
 // au milieu d'une phrase)
 
-// tableaux des citations / sentencesTab
+// Création de 2 tableaux de citations
 
 const yodaSentences = {
   titre: "Maître Yoda",
@@ -60,7 +60,8 @@ const btnGenerer = document.getElementById(`btn-generate`);
 
 //! Variable pour le paramètrage de la fenetre pop-up
 const swalFire = (html) => {
-  swal.fire({
+  swal
+    .fire({
       title: "Voici votre citation",
       showClass: {
         popup: "animate__animated animate__fadeInDown",
@@ -99,7 +100,7 @@ function fillSelect(textsTab, $select) {
 fillSelect(titlesTab, typeOfQuote);
 
 //! Création des parties aléatoires
-function getRandom(tabQuote, numberToDisplay) {
+function generateQuote(tabQuote, numberToDisplay) {
   let elementHtmlQuote = document.createElement("div");
   for (let i = 0; i < numberToDisplay; i++) {
     let sentences = tabQuote.slice();
@@ -112,14 +113,13 @@ function getRandom(tabQuote, numberToDisplay) {
         quote += ", ";
         quote =
           quote.charAt(0, 1).toUpperCase() + quote.substring(1).toLowerCase();
-      }
-      else if( i === 1){
+      } else if (i === 1) {
         quote += " ";
       }
       else if (i === 2) {
         quote += ".";
       }
-          sentences.splice(randomIndex, 1);
+      sentences.splice(randomIndex, 1);
     }
     let generateQuote = document.createElement("blockquote");
     generateQuote.append(quote);
@@ -136,14 +136,8 @@ btnGenerer.addEventListener(`click`, () => {
   const tabtoDisplay = sentencesTab[typeOfDisplay];
   // const ponctuation = tabtoDisplay;
   if (tabtoDisplay) {
-    const quotesBlock = getRandom(tabtoDisplay.sentences, numberToDisplay);
+    const quotesBlock = generateQuote(tabtoDisplay.sentences, numberToDisplay);
 
     swalFire(quotesBlock);
   }
 });
-
-// les morceaux de phrases doivent être différents en plus du Math.random il faut eviter les doublons OK
-// le premier mot de la citation doit avoir une majuscule OK
-// le dernier mot de la citation doit etre suivi d'un point
-// Pouvoir mettre en ordre les morceaux de phrases dans citations
-//vider le tableau après le clic /OK/ création d'un tableau temporaire qui receptionne les 3 bouts de phrases et se vident
